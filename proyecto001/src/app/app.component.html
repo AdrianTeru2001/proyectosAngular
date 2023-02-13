@@ -1,8 +1,10 @@
 <div>
   <p>Nombre del Empleado:{{nombre}}</p>
   <p>Edad:{{edad}}</p>  
+  <!-- ngIf -->
   <p *ngIf="edad>=18; else menor">Es mayor de edad</p>  
   <ng-template #menor><p>Es menor de edad</p></ng-template> 
+  <!-- ngFor -->
   <table border="1">
     <thead>
       <th><p>Sueldos:</p></th>
@@ -17,6 +19,7 @@
 
   <br>
 
+  <!-- Captura de eventos (contador) -->
   <div>
     <p>Contador -> {{contador}}</p>
     <button (click)="incrementar()">Sumar 1</button>
@@ -25,6 +28,7 @@
 
   <br>
 
+  <!-- ngModel -->
   <input type="text" [(ngModel)]="nombre">
   <br>
   {{nombre}}
