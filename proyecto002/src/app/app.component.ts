@@ -11,14 +11,15 @@ export class AppComponent {
   art={
     codigo:0 ,
     descripcion:"",
-    precio:0
+    precio:0,
+    ubicacion:"",
   }
 
-  articulos = [{codigo:1, descripcion:'papas', precio:10.55},
-               {codigo:2, descripcion:'manzanas', precio:12.10},
-               {codigo:3, descripcion:'melon', precio:52.30},
-               {codigo:4, descripcion:'cebollas', precio:17},
-               {codigo:5, descripcion:'calabaza', precio:20},
+  articulos = [{codigo:1, descripcion:'papas', precio:10.55, ubicacion:'Sevilla'},
+               {codigo:2, descripcion:'manzanas', precio:12.10, ubicacion:'Granada'},
+               {codigo:3, descripcion:'melon', precio:52.30, ubicacion:'Madrid'},
+               {codigo:4, descripcion:'cebollas', precio:17, ubicacion:'Barcelona'},
+               {codigo:5, descripcion:'calabaza', precio:20, ubicacion:'Valencia'},
               ];
 
   hayRegistros() {
@@ -47,16 +48,19 @@ export class AppComponent {
     }        
     this.articulos.push({codigo:this.art.codigo,
                          descripcion:this.art.descripcion,
-                         precio:this.art.precio });
+                         precio:this.art.precio,
+                         ubicacion:this.art.ubicacion });
     this.art.codigo=0;
     this.art.descripcion="";	
     this.art.precio=0;    
+    this.art.ubicacion="";    
   }
 
-  seleccionar(art: { codigo: number; descripcion: string; precio: number; }) {
+  seleccionar(art: { codigo: number; descripcion: string; precio: number; ubicacion: string }) {
     this.art.codigo=art.codigo;
     this.art.descripcion=art.descripcion;
     this.art.precio=art.precio;
+    this.art.ubicacion=art.ubicacion;
   }
 
   modificar() {
@@ -65,6 +69,7 @@ export class AppComponent {
       {
         this.articulos[x].descripcion=this.art.descripcion;
         this.articulos[x].precio=this.art.precio;
+        this.articulos[x].ubicacion=this.art.ubicacion;
         return;
       }        
     alert('No existe el código de articulo ingresado');
