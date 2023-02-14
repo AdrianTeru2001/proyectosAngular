@@ -29,4 +29,9 @@ export class SelectornumericoComponent implements OnInit {
     if (v>=this.minimo && v<=this.maximo)
       this.actual=v;
   }
+
+  resetear() {
+    this.actual = 0;
+  } 
+
 }

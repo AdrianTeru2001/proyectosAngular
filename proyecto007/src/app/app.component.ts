@@ -18,4 +18,12 @@ export class AppComponent {
     this.selector2.fijar(valor);
   }
 
+  resetearSelector1(valor:number) {
+    this.selector1.resetear();
+  }
+
+  resetearSelector2(valor:number) {
+    this.selector2.resetear();
+  }
+
 }

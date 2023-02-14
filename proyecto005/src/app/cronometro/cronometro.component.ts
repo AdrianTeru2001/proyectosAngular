@@ -8,15 +8,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class CronometroComponent {
   segundo=0;
   @Input() inicio: number=0;
-  @Output() multiplo10 = new EventEmitter();
+  @Output() limpiarEvento = new EventEmitter();
+  @Output() finalcountdown = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
+  iniciar() {
+    this.limpiarEvento.emit();
     this.segundo = this.inicio;
-    setInterval(() => {
-      this.segundo++;
-      if (this.segundo % 10 == 0) {
-        this.multiplo10.emit(this.segundo);
+    let cont = setInterval(() => {
+      this.segundo--;
+      if (this.segundo == 0) {
+        this.finalcountdown.emit();
+        clearInterval(cont);
       }
     }, 1000);
   }

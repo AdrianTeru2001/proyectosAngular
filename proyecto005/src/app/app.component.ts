@@ -8,8 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   mensaje='';
 
-  actualizar(t: number) {
-    this.mensaje = t + ' (se actualiza cada 10 segundos)';
+  final() {
+    this.mensaje = "El temporizador ha llegado a cero";
+  }
+
+  limpiarMensaje() {
+    this.mensaje = "";
   }
   
 }

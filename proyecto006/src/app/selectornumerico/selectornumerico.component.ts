@@ -33,4 +33,8 @@ export class SelectornumericoComponent implements OnInit {
     }
   }
 
+  resetear() {
+    this.actual = 0;
+  }
+
 }

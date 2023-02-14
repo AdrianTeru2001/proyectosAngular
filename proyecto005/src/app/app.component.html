@@ -1,6 +1,8 @@
 <div style="text-align:center">
   <h1>Prueba de la componente cronometro</h1>
-  <app-cronometro [inicio]="15" (multiplo10)="actualizar($event)"></app-cronometro>
+  <app-cronometro [inicio]="15" (finalcountdown)="final()" (limpiarEvento)="limpiarMensaje()" #cronometro></app-cronometro>
+  <br>
+  <button (click)="cronometro.iniciar()">Iniciar Cuenta Atras</button>
   <h2>Evento</h2>
   <h3>{{mensaje}}</h3>
 </div>
