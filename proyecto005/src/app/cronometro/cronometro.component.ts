@@ -17,7 +17,8 @@ export class CronometroComponent {
     this.segundo = this.inicio;
     let cont = setInterval(() => {
       this.segundo--;
-      if (this.segundo == 0) {
+      if (this.segundo <= 0) {
+        this.segundo = 0;
         this.finalcountdown.emit();
         clearInterval(cont);
       }
