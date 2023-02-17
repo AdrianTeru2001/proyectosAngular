@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'proyecto009';
+
+  numeroAle: number= Math.trunc(Math.random() * 6)+1;
 }
