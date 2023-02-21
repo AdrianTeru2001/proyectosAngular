@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ArticulosService {
 
-  url='https://scratchya.com.ar/angular/proyecto016/'; // disponer url de su servidor que tiene las páginas PHP
+  url='http://localhost/Entorno%20Cliente/proyectosAngular/ServidorAJAX016/'; // disponer url de su servidor que tiene las páginas PHP
 
   constructor(private http: HttpClient) { }
 
