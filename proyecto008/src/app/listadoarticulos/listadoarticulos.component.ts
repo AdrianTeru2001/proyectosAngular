@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { Articulo } from '../articulo';
+
 @Component({
   selector: 'app-listadoarticulos',
   templateUrl: './listadoarticulos.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListadoarticulosComponent implements OnInit {
   
-  @Input() datos:any;
+  @Input() datos!: Articulo[];
 
   constructor() { }
 
